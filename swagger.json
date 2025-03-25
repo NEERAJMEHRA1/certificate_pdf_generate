@@ -1,0 +1,120 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "version": "1.0.0",
+        "title": "Testing swagger",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": ""
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "paths": {
+        "/certificate-generate": {
+            "post": {
+                "tags": [
+                    "CERTIFICATE"
+                ],
+                "summary": "Method used to Generate-Certificate",
+                "security": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "contentType"
+                                ],
+                                "properties": {
+                                    "registerId": {
+                                        "type": "string",
+                                        "default": "#CI11022000"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "default": "neerajscsit302@gmail.com"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "default": "9144188937"
+                                    },
+                                    "address": {
+                                        "type": "string",
+                                        "default": "Rau Indore Madhya Pradesh"
+                                    },
+                                    "fullName": {
+                                        "type": "string",
+                                        "default": "Neeraj Mehra"
+                                    },
+                                    "dob": {
+                                        "type": "string",
+                                        "default": "11-02-2000"
+                                    },
+                                    "gender": {
+                                        "type": "string",
+                                        "default": "Male/Female"
+                                    },
+                                    "bloodGroup": {
+                                        "type": "string",
+                                        "default": "AB+"
+                                    },
+                                    "dateTime": {
+                                        "type": "string",
+                                        "default": "23-11-2023 22:34"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}

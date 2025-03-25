@@ -1,0 +1,23 @@
+{
+  "name": "certificatetest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "fs-extra": "^11.3.0",
+    "handlebars": "^4.7.8",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7",
+    "puppeteer": "^24.4.0",
+    "swagger-ui-express": "^5.0.1",
+    "url": "^0.11.4"
+  }
+}
